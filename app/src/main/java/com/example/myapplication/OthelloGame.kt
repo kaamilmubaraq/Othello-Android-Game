@@ -8,6 +8,7 @@ object Disc {
     const val WHITE = 2
 }
 
+//jumpei
 enum class Player(val disc: Int, val label: String) {
     BLACK(Disc.BLACK, "Black"),
     WHITE(Disc.WHITE, "White");
@@ -61,6 +62,7 @@ fun newGame(): GameState {
     )
 }
 
+//takeishi
 fun playMove(state: GameState, index: Int): GameState {
     if (state.gameOver) return state
     if (index !in 0..63) return state
@@ -123,7 +125,7 @@ fun playMove(state: GameState, index: Int): GameState {
         }
     }
 }
-
+//kudo
 private fun applyMove(board: IntArray, index: Int, player: Player): IntArray {
     val newBoard = board.copyOf()
     val me = player.disc
@@ -160,6 +162,7 @@ private fun applyMove(board: IntArray, index: Int, player: Player): IntArray {
     return newBoard
 }
 
+//kahara
 private fun computeValidMoves(board: IntArray, player: Player): BooleanArray {
     val me = player.disc
     val opp = if (me == Disc.BLACK) Disc.WHITE else Disc.BLACK
